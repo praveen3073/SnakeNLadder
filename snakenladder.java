@@ -5,6 +5,7 @@ public class snakenladder {
 		final int START_POSITION = 0;
 		int position = START_POSITION;
 		int positionChange = 0;
+		int dieCastNumber = 0;
 		while(position!=100)
 		{
 			int dieNumber = (int) Math.floor(Math.random()*60)%6 + 1;
@@ -21,7 +22,9 @@ public class snakenladder {
 				position=0;
 			if(position>100)
 				position -= positionChange;
-			System.out.println(position);
+			System.out.println("The current position of the piece is:" + position);
+			dieCastNumber++;
 		}
+		System.out.println("Total number of times the die was cast: " + dieCastNumber);
 	}
 }
