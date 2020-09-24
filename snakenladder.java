@@ -5,10 +5,8 @@ public class snakenladder {
 		final int START_POSITION = 0;
 		int position = START_POSITION;
 		int positionChange = 0;
-		while(position<100)
+		while(position!=100)
 		{
-			if(position<0)
-				position=0;
 			int dieNumber = (int) Math.floor(Math.random()*60)%6 + 1;
 			System.out.println("The number on the die is: " + dieNumber);
 			int playOption = (int) Math.floor(Math.random()*60)%3;
@@ -19,6 +17,10 @@ public class snakenladder {
 			else
 				positionChange = -1*dieNumber;
 			position += positionChange;
+			if(position<0)
+				position=0;
+			if(position>100)
+				position -= positionChange;
 			System.out.println(position);
 		}
 	}
